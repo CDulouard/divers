@@ -20,6 +20,8 @@ class Reseau:
         except:
             print("wrong inputs")
 
+
+
 test = Reseau()
 N1 = Neurone()
 N2 = Neurone()
