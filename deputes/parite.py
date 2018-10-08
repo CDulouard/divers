@@ -1,14 +1,17 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-# Import du module
-
+# Import des module
 import analysis.csv as c_an
 import analysis.xml as x_an
 import argparse
-import lg
+import logging as lg
+
+
+
 
 #import pdb;pdb.set_trace()
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -17,6 +20,10 @@ def parse_arguments():
 
     parser.add_argument("-d", "--datafile",
                         help="""CSV file containing pieces of information about the members of parliament""")
+
+    parser.add_argument("-i","--info", action='store_true', help="""information about
+
+    the file""")
 
     return parser.parse_args()
 
@@ -49,6 +56,7 @@ def main():
             except FileNotFoundError as e:
 
                 lg.warning("Ow :( The file was not found. Here is the original message of the exception :", e)
+
 
             finally:
 
